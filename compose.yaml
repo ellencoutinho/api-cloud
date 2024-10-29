@@ -4,12 +4,12 @@ version: '3.8'
 
 services:
   api:
-    image: ellencoutinho/api-clima:v2
+    image: ellencoutinho/api-clima:v4
     environment:
-      - DB_USER=${DB_USER:-projeto}
-      - DB_PASSWORD=${DB_PASSWORD:-projeto}
-      - DB_HOST=${DB_HOST:-projeto}
-      - DB_NAME=${DB_NAME:-projeto}
+      - DB_USER=${POSTGRES_USER:-projeto}
+      - DB_PASSWORD=${POSTGRES_PASSWORD:-projeto}
+      - DB_HOST=${POSTGRES_DB:-db} 
+      - DB_NAME=${POSTGRES_DB:-projeto}
       - MINHA_SENHA=${MINHA_SENHA:-projeto}
     ports:
       - 8000:8000
@@ -18,5 +18,9 @@ services:
 
   db:
     image: postgres:16
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-projeto} 
+      POSTGRES_USER: ${POSTGRES_USER:-projeto}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-projeto}
     ports:
       - 5430:5432
