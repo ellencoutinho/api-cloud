@@ -48,7 +48,7 @@ def registro(user: UserCreate, session: SessionDep):
     # Verificar se o usuário já existe
     usuario_existente = session.exec(select(Usuario).where(Usuario.email == user.email)).first()
     if usuario_existente:
-        raise HTTPException(status_code=400, detail="Email já registrado")
+        raise HTTPException(status_code=409, detail="Email já registrado")
 
     # Criar novo usuário
     novo_usuario = Usuario(

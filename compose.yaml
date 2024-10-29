@@ -4,14 +4,13 @@ version: '3.8'
 
 services:
   api:
-    build:
-      context: ./app
+    image: ellencoutinho/api-clima:v2
     environment:
-      - DB_USER=cloud
-      - DB_PASSWORD=cloud
-      - DB_HOST=db
-      - DB_NAME=cloud
-      - MINHA_VARIAVEL=${MINHA_SENHA:-projeto}
+      - DB_USER=${DB_USER:-projeto}
+      - DB_PASSWORD=${DB_PASSWORD:-projeto}
+      - DB_HOST=${DB_HOST:-projeto}
+      - DB_NAME=${DB_NAME:-projeto}
+      - MINHA_SENHA=${MINHA_SENHA:-projeto}
     ports:
       - 8000:8000
     depends_on:
@@ -19,14 +18,5 @@ services:
 
   db:
     image: postgres:16
-    environment:
-      POSTGRES_USER: cloud       
-      POSTGRES_PASSWORD: cloud
-      POSTGRES_DB: cloud
     ports:
       - 5430:5432
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  postgres_data:
