@@ -21,6 +21,6 @@ Estrutura de requisição a api para obter o clima diário na cidade de São Pau
 
 #
 
-➤ Para mais informações, acesse a [documentação do projeto](https://ellencoutinho.github.io/api-cloud/endpoints/)
+➤ Para mais informações, acesse a [documentação do projeto](https://ellencoutinho.github.io/api-cloud/)
 
 ➤ Projeto individual da disciplina Computação em nuvem, do 6º semestre de Engenharia de Computação no Insper. Realizado pela aluna Ellen Coutinho Lião da Silva.
