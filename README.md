@@ -1,10 +1,12 @@
 ### API para verificação do clima diário ☀️
 
-Estrutura de requisição a api para obter o clima diário, com imagem montada e [disponibilizada no docker hub](https://hub.docker.com/repository/docker/ellencoutinho/api-clima/general). O arquivo 
+Estrutura de requisição a api para obter o clima diário na cidade de São Paulo, com imagem montada e [disponibilizada no docker hub](https://hub.docker.com/repository/docker/ellencoutinho/api-clima/general). O arquivo 
 ˋcompose.yamlˋ está na raiz do repositório.
+
+▶️ Funcionamento exemplificado em [vídeo no YouTube](https://youtu.be/Yaf96xm-prE?si=9MBDJct9iD-eDBg-)
 #
 #### Endpoints da API 👩🏽‍💻
-Funcionamento exemplificado no vídeo: []
+
 - POST /registrar
 
     Pode retornar 200 (registro criado com sucesso, com token JWT atribuído no cadastro) ou 409 (quando o email já foi registrado)
@@ -19,6 +21,6 @@ Funcionamento exemplificado no vídeo: []
 
 #
 
-➤ Para mais informações, acesse a documentação do projeto
+➤ Para mais informações, acesse a [documentação do projeto](https://ellencoutinho.github.io/api-cloud/endpoints/)
 
 ➤ Projeto individual da disciplina Computação em nuvem, do 6º semestre de Engenharia de Computação no Insper. Realizado pela aluna Ellen Coutinho Lião da Silva.

@@ -4,7 +4,7 @@ version: '3.8'
 
 services:
   api:
-    image: ellencoutinho/api-clima:v4
+    image: ellencoutinho/api-clima:v5
     environment:
       - DB_USER=${POSTGRES_USER:-projeto}
       - DB_PASSWORD=${POSTGRES_PASSWORD:-projeto}

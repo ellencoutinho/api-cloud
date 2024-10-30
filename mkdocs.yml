@@ -1,0 +1,9 @@
+site_name: API com previsão climática em São Paulo
+site_url: "https://ellencoutinho.github.io/api-cloud/"
+theme:
+  name: material
+  palette:
+    primary: lavender
+    accent: purple
+plugins:
+   - search 
