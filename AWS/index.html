@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://ellencoutinho.github.io/api-cloud/endpoints/">
+        <link rel="canonical" href="https://ellencoutinho.github.io/api-cloud/AWS/">
       
       
-        <link rel="prev" href="../docker/">
+        <link rel="prev" href="..">
       
+      
+        <link rel="next" href="../docker/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>Endpoints - API com previsão climática em São Paulo</title>
+        <title>Deploy dos serviços no EKS da AWS - API com previsão climática em São Paulo</title>
       
     
     
@@ -69,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#deploy-dos-servicos-no-eks-da-aws" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -101,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Endpoints
+              Deploy dos serviços no EKS da AWS
             
           </span>
         </div>
@@ -211,10 +218,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../AWS/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Deploy dos serviços no EKS da AWS
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -223,6 +250,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tecnologia-utilizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tecnologia Utilizada
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquivos-de-configuracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arquivos de Configuração
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arquivos de Configuração">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-api-deploymentyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. api-deployment.yaml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-db-deploymentyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. db-deployment.yaml
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -251,17 +340,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../endpoints/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -270,7 +352,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -292,6 +373,58 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tecnologia-utilizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tecnologia Utilizada
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquivos-de-configuracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arquivos de Configuração
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arquivos de Configuração">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-api-deploymentyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. api-deployment.yaml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-db-deploymentyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. db-deployment.yaml
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -306,55 +439,107 @@
                   
 
 
-  <h1>Endpoints</h1>
-
-<p>A API possui suporte à 3 endpoints:</p>
+<h1 id="deploy-dos-servicos-no-eks-da-aws">Deploy dos serviços no EKS da AWS</h1>
+<p>Foi realizado o deploy dos dois serviços para o funcionamento da aplicação:</p>
 <ol>
-<li>
-<p>POST /registrar</p>
-<p>Atribuição de registrar um usuário na base de dados</p>
-<ul>
-<li>
-<p>Retorna 200 quando o registro criado com sucesso, com token JWT atribuído no cadastro
-<img alt="" src="../img/registro_1.png" />
-<img alt="" src="../img/registro_2.png" /></p>
-</li>
-<li>
-<p>Retorna 409 quando o email já foi registrado
-<img alt="" src="../img/registro_3.png" /></p>
-</li>
-</ul>
-</li>
-<li>
-<p>POST /login</p>
-<p>Atribuição de gerar um token JWT (utilizado como modo de autenticação) somente aos usuários que já estiverem registrados na base de dados</p>
-<ul>
-<li>
-<p>Retorna 200 quando a autenticação foi bem sucedida
-<img alt="" src="../img/login_1.png" />
-<img alt="" src="../img/login_2.png" /></p>
-</li>
-<li>
-<p>Retorna 401 quando parte das credenciais estão inválidas
-<img alt="" src="../img/login_3.png" /></p>
-</li>
-</ul>
-</li>
-<li>
-<p>GET /consultar</p>
-<p>Atribuição de checar se o usuário a fazer a solicitação está autenticado, para assim fornecer as informações do webscrapping. Isso significa observar se o token JWT contido no campo "Authentication: Bearer" do header da requisição é válido.</p>
-<ul>
-<li>
-<p>Retorna 200 quando a autenticação é bem sucedida, então retorna as informações do clima
-<img alt="" src="../img/consultar_1.png" /></p>
-</li>
-<li>
-<p>Retorna 403 quando o token JWT submetido no header da requisição não é coerente com o token do login
-<img alt="" src="../img/consultar_2.png" /></p>
-</li>
-</ul>
-</li>
+<li><strong>Banco de Dados (PostgreSQL)</strong></li>
+<li><strong>API de Clima</strong> — A API fornece informações sobre o clima atual, detalhada na seção Endpoints desse site. Ela pode ser acessada através da URL:</li>
 </ol>
+<pre><code>http://a9ec7415777414057a984d4103f0432e-374415893.us-east-1.elb.amazonaws.com:8000/docs
+</code></pre>
+<p><a href="http://a9ec7415777414057a984d4103f0432e-374415893.us-east-1.elb.amazonaws.com:8000/docs">Clique aqui para acessar a API</a></p>
+<p><a href="https://youtu.be/hM6l0q3O9bU?si=I0sEQQOHafJqHNPe">Clique aqui para visualizar o vídeo de demonstração</a></p>
+<hr />
+<h2 id="tecnologia-utilizada">Tecnologia Utilizada</h2>
+<p>Para realizar o deploy, foi utilizado o <strong>Elastic Kubernetes Service (EKS)</strong> e <strong>Kubernetes</strong> da AWS, onde cada serviço foi implantado em um <strong>POD</strong>. A estrutura de rede também foi provida pela AWS, no serviço de infraestrutura como código, <a href="https://www.youtube.com/redirect?event=comments&amp;redir_token=QUFFLUhqbGZZRDRlbjlKVWp1NlpSUTJpelg1QVJvWGlWZ3xBQ3Jtc0ttODhqdUIxcjVuc0lNLXFTQ1owWDVfQ1d4clI5d05EY0dVbW9mSXhxX1ZvUTY5LVJtWm1oUTFmOENNWURsa0ZGa0FhS2NTMW9WUzN0eFBUa19aMF91Y2dmSVdEc0U0MFdVTDQwWk5XeFZ5ZlU0VTZFaw&amp;q=https%3A%2F%2Fs3.us-west-2.amazonaws.com%2Famazon-eks%2Fcloudformation%2F2020-10-29%2Famazon-eks-vpc-private-subnets.yaml">endereçada no link</a>.</p>
+<p>Abaixo estão os arquivos de configuração que foram utilizados, os quais estão também disponíveis no <a href="https://github.com/ellencoutinho/api-cloud.git">repositório do projeto</a>.</p>
+<hr />
+<h2 id="arquivos-de-configuracao">Arquivos de Configuração</h2>
+<h4 id="1-api-deploymentyaml">1. <strong>api-deployment.yaml</strong></h4>
+<p>Este arquivo configura o deploy da API que serve os dados sobre o clima.</p>
+<pre><code class="language-yaml">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - name: api-container
+        image: ellencoutinho/api-clima:v5
+        env:
+        - name: DB_USER
+          value: &quot;projeto&quot;
+        - name: DB_PASSWORD
+          value: &quot;projeto&quot;
+        - name: DB_HOST
+          value: &quot;db-service&quot;
+        - name: DB_NAME
+          value: &quot;projeto&quot;
+        - name: MINHA_SENHA
+          value: &quot;projeto&quot;
+        ports:
+        - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-service
+spec:
+  selector:
+    app: api
+  ports:
+    - port: 8000
+      targetPort: 8000
+  type: LoadBalancer
+</code></pre>
+<h4 id="2-db-deploymentyaml">2. <strong>db-deployment.yaml</strong></h4>
+<p>Este arquivo configura o deploy do banco de dados PostgreSQL, que armazena as informações necessárias para a API.</p>
+<pre><code class="language-yaml">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - name: db-container
+        image: postgres:16
+        env:
+        - name: POSTGRES_DB
+          value: &quot;projeto&quot;
+        - name: POSTGRES_USER
+          value: &quot;projeto&quot;
+        - name: POSTGRES_PASSWORD
+          value: &quot;projeto&quot;
+        ports:
+        - containerPort: 5432
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-service
+spec:
+  selector:
+    app: db
+  ports:
+    - port: 5432
+      targetPort: 5432
+</code></pre>
 
 
 
