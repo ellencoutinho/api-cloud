@@ -3,7 +3,10 @@
 Estrutura de requisição a api para obter o clima diário na cidade de São Paulo, com imagem montada e [disponibilizada no docker hub](https://hub.docker.com/repository/docker/ellencoutinho/api-clima/general). O arquivo 
 ˋcompose.yamlˋ está na raiz do repositório.
 
-▶️ Funcionamento exemplificado em [vídeo no YouTube](https://youtu.be/Yaf96xm-prE?si=9MBDJct9iD-eDBg-)
+▶️ Funcionamento do docker exemplificado em [vídeo no YouTube](https://youtu.be/Yaf96xm-prE?si=9MBDJct9iD-eDBg-)
+
+▶️ Funcionamento do deploy pela AWS exemplificado em [vídeo no YouTube](https://youtu.be/hM6l0q3O9bU?si=I0sEQQOHafJqHNPe)
+
 #
 #### Endpoints da API 👩🏽‍💻
 
